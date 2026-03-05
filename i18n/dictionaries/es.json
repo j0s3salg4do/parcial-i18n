@@ -1,0 +1,6 @@
+{
+  "nav": { "home": "Inicio", "profile": "Perfil" },
+  "home": { "title": "Bienvenido", "subtitle": "Prueba de internacionalización" },
+  "profile": { "title": "Perfil", "text": "Esta es la página de perfil." },
+  "language": { "label": "Idioma", "spanish": "Español", "english": "Inglés" }
+}

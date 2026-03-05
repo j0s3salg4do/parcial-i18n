@@ -1,0 +1,6 @@
+{
+  "nav": { "home": "Home", "profile": "Profile" },
+  "home": { "title": "Welcome", "subtitle": "Internationalization test" },
+  "profile": { "title": "Profile", "text": "This is the profile page." },
+  "language": { "label": "Language", "spanish": "Spanish", "english": "English" }
+}
