@@ -1,122 +1,91 @@
-Preparcial – Internacionalización (I18N) con Next.js
 
-Este proyecto corresponde al preparcial de la materia de desarrollo web, cuyo objetivo es implementar internacionalización (I18N) en una aplicación desarrollada con Next.js (App Router).
+# Parcial – Desarrollo Web
 
-La aplicación soporta múltiples idiomas mediante rutas dinámicas, diccionarios JSON y detección de idioma.
+Aplicación desarrollada con **Next.js (App Router)** que implementa **internacionalización (I18N)** mediante rutas dinámicas, diccionarios JSON y detección de idioma.
 
-Tecnologías utilizadas
+---
 
-Next.js 16
+## Tecnologías
 
-React
+- Next.js  
+- React  
+- TypeScript  
+- Node.js  
 
-TypeScript
+---
 
-Node.js
+## Funcionalidades
 
-App Router
+- Rutas dinámicas por idioma
 
-Funcionalidades implementadas
-1. Rutas dinámicas por idioma
-
-La aplicación utiliza rutas dinámicas para manejar el idioma:
-
+```
 /es
 /en
 /es/profile
 /en/profile
+```
 
-Cada ruta carga el contenido en el idioma correspondiente.
+- Traducciones mediante **diccionarios JSON**
 
-2. Diccionarios de traducción
+- Carga dinámica de traducciones en **Server Components**
 
-Las traducciones se gestionan mediante archivos JSON ubicados en:
+- Redirección automática al idioma por defecto
 
-i18n/dictionaries
+- Selector de idioma (Español / Inglés)
 
-Ejemplo:
+---
 
-es.json
+## Estructura del proyecto
 
-{
-  "home": {
-    "title": "Bienvenido"
-  }
-}
+```
+app/
+ └─ [lang]/
+     ├─ layout.tsx
+     ├─ page.tsx
+     └─ profile/
+         └─ page.tsx
 
-en.json
-
-{
-  "home": {
-    "title": "Welcome"
-  }
-}
-
-Esto permite separar completamente el contenido del código.
-
-3. Carga dinámica de traducciones
-
-Las traducciones se cargan mediante un helper:
-
-i18n/get-dictionary.ts
-
-Esto permite que los Server Components obtengan el diccionario correspondiente según el idioma.
-
-4. Middleware de redirección
-
-Se implementa un middleware que redirige automáticamente al idioma por defecto si la URL no lo especifica.
-
-Ejemplo:
-
-localhost:3000  →  /es
-5. Cambio de idioma
-
-La aplicación incluye un selector de idioma que permite cambiar entre:
-
-Español
-Inglés
-
-El cambio actualiza la ruta y el contenido dinámicamente.
-
-Estructura del proyecto
-app
- ├─ [lang]
- │   ├─ layout.tsx
- │   ├─ page.tsx
- │   └─ profile
- │       └─ page.tsx
- │
-components
+components/
  └─ LangSwitcher.tsx
 
-i18n
+i18n/
  ├─ config.ts
  ├─ get-dictionary.ts
- └─ dictionaries
+ └─ dictionaries/
      ├─ es.json
      └─ en.json
 
 middleware.ts
-Ejecución del proyecto
+```
+
+---
+
+## Ejecutar el proyecto
 
 Instalar dependencias:
 
+```
 npm install
+```
 
 Ejecutar en modo desarrollo:
 
+```
 npm run dev
+```
 
 Abrir en el navegador:
 
+```
 http://localhost:3000
-Release del proyecto
+```
 
-Este repositorio incluye el release solicitado:
+---
 
+## Release
+
+El repositorio incluye el release solicitado:
+
+```
 Parcial v0.0
-Autor
-
-Proyecto desarrollado por:
-
-Jose Salgado
+```
