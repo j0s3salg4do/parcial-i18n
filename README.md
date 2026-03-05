@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Preparcial – Internacionalización (I18N) con Next.js
 
-## Getting Started
+Este proyecto corresponde al preparcial de la materia de desarrollo web, cuyo objetivo es implementar internacionalización (I18N) en una aplicación desarrollada con Next.js (App Router).
 
-First, run the development server:
+La aplicación soporta múltiples idiomas mediante rutas dinámicas, diccionarios JSON y detección de idioma.
 
-```bash
+Tecnologías utilizadas
+
+Next.js 16
+
+React
+
+TypeScript
+
+Node.js
+
+App Router
+
+Funcionalidades implementadas
+1. Rutas dinámicas por idioma
+
+La aplicación utiliza rutas dinámicas para manejar el idioma:
+
+/es
+/en
+/es/profile
+/en/profile
+
+Cada ruta carga el contenido en el idioma correspondiente.
+
+2. Diccionarios de traducción
+
+Las traducciones se gestionan mediante archivos JSON ubicados en:
+
+i18n/dictionaries
+
+Ejemplo:
+
+es.json
+
+{
+  "home": {
+    "title": "Bienvenido"
+  }
+}
+
+en.json
+
+{
+  "home": {
+    "title": "Welcome"
+  }
+}
+
+Esto permite separar completamente el contenido del código.
+
+3. Carga dinámica de traducciones
+
+Las traducciones se cargan mediante un helper:
+
+i18n/get-dictionary.ts
+
+Esto permite que los Server Components obtengan el diccionario correspondiente según el idioma.
+
+4. Middleware de redirección
+
+Se implementa un middleware que redirige automáticamente al idioma por defecto si la URL no lo especifica.
+
+Ejemplo:
+
+localhost:3000  →  /es
+5. Cambio de idioma
+
+La aplicación incluye un selector de idioma que permite cambiar entre:
+
+Español
+Inglés
+
+El cambio actualiza la ruta y el contenido dinámicamente.
+
+Estructura del proyecto
+app
+ ├─ [lang]
+ │   ├─ layout.tsx
+ │   ├─ page.tsx
+ │   └─ profile
+ │       └─ page.tsx
+ │
+components
+ └─ LangSwitcher.tsx
+
+i18n
+ ├─ config.ts
+ ├─ get-dictionary.ts
+ └─ dictionaries
+     ├─ es.json
+     └─ en.json
+
+middleware.ts
+Ejecución del proyecto
+
+Instalar dependencias:
+
+npm install
+
+Ejecutar en modo desarrollo:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir en el navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+Release del proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este repositorio incluye el release solicitado:
 
-## Learn More
+Parcial v0.0
+Autor
 
-To learn more about Next.js, take a look at the following resources:
+Proyecto desarrollado por:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Jose Salgado
