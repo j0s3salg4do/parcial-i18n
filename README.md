@@ -78,9 +78,6 @@ Abrir en el navegador:
 
 ```
 http://localhost:3000
-```
-
----
 
 ## Release
 
