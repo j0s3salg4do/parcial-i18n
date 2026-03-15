@@ -1,15 +1,15 @@
 {
   "homeTitle": "Personajes de Harry Potter",
-  "homeDescription": "Explora el universo mÃ¡gico de Harry Potter: un listado de personajes con su casa y detalles principales.",
-  "footerRights": "Â© 2026 Harry Potter App. Todos los derechos reservados.",
+  "homeDescription": "Explora el universo mágico de Harry Potter: un listado de personajes con su casa y detalles principales.",
+  "footerRights": "© 2026 Harry Potter App. Todos los derechos reservados.",
   "footerDev": "Desarrollado para: ISIS3710",
   "house": "Casa",
-  "gender": "GÃ©nero",
+  "gender": "Género",
   "wand": "Varita",
   "wood": "Madera",
-  "core": "NÃºcleo",
+  "core": "Núcleo",
   "length": "Longitud",
   "cm": "cm",
   "notAvailable": "No disponible",
-  "detailDescription": "Consulta informaciÃ³n detallada del personaje."
+  "detailDescription": "Consulta información detallada del personaje."
 }
