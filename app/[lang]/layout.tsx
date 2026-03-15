@@ -1,30 +1,42 @@
-import type { Locale } from "../../i18n/config";
-import { getDictionary } from "../../i18n/get-dictionary";
-import Link from "next/link";
-import LangSwitcher from "../../components/LangSwitcher";
+import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { getDictionary } from "@/lib/dictionaries";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: "es" | "en" }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  return {
+    title: lang === "es"
+      ? "Listado de personajes - HarryPotterApp"
+      : "Character list - HarryPotterApp",
+    description: lang === "es"
+      ? "Explora el universo mÃ¡gico de Harry Potter: un listado completo de personajes con su casa y detalles principales."
+      : "Explore the magical universe of Harry Potter: a complete list of characters with their house and main details.",
+  };
+}
 
 export default async function LangLayout({
-  params,
   children,
-}: {
-  params: Promise<{ lang: Locale }>;
+  params,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  params: Promise<{ lang: "es" | "en" }>;
+}>) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return (
-    <>
-      <header style={{ padding: 16, borderBottom: "1px solid #ddd" }}>
-        <nav style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <Link href={`/${lang}`}>{dict.nav.home}</Link>
-          <Link href={`/${lang}/profile`}>{dict.nav.profile}</Link>
-          <div style={{ marginLeft: "auto" }}>
-            <LangSwitcher lang={lang} dict={dict} />
-          </div>
-        </nav>
-      </header>
-      <main style={{ padding: 24 }}>{children}</main>
-    </>
+    <html lang={lang}>
+      <body className="min-h-screen bg-[#e0e0e0]">
+        <Header lang={lang} />
+        <main className="min-h-[calc(100vh-140px)]">{children}</main>
+        <Footer rights={dict.footerRights} dev={dict.footerDev} />
+      </body>
+    </html>
   );
 }

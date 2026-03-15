@@ -1,6 +1,15 @@
 {
-  "nav": { "home": "Home", "profile": "Profile" },
-  "home": { "title": "Welcome", "subtitle": "Internationalization test" },
-  "profile": { "title": "Profile", "text": "This is the profile page." },
-  "language": { "label": "Language", "spanish": "Spanish", "english": "English" }
+  "homeTitle": "Harry Potter Characters",
+  "homeDescription": "Explore the magical universe of Harry Potter: a character list with house and main details.",
+  "footerRights": "Â© 2026 Harry Potter App. All rights reserved.",
+  "footerDev": "Developed for: ISIS3710",
+  "house": "House",
+  "gender": "Gender",
+  "wand": "Wand",
+  "wood": "Wood",
+  "core": "Core",
+  "length": "Length",
+  "cm": "cm",
+  "notAvailable": "Not available",
+  "detailDescription": "Check detailed character information."
 }
